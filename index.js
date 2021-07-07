@@ -11,16 +11,25 @@ program
 
 
 .parse();
+console.log(program.opts())
 
 const {length,numbers,symbols,save}= program.opts()
+
+
 // generate password fn
 const pwdChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const pwdnumbers = '0123456789';
 const pwdspecials = '!@#$%^&*()_+{}:"<>?\|[];\',./`~';
-const generatefn=(length,number,symbols)=>{
-    if(numbers==true && symbols==true){
+let finalPass='';
 
-
+const generate=()=>{
+if (numbers==false && symbols==false)
+     for(let i=0;i<=length;i++){
+         const rand=   Math.floor(Math.random()*pwdChars.length)
+         finalPass+=pwdChars[rand]
+        }
     }
-
-}
+    generate();
+console.log(finalPass)
+    
+    
